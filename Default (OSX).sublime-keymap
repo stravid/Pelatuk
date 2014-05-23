@@ -1,0 +1,11 @@
+[
+    {
+        "keys": ["ctrl+alt+k"], "command": "run_current_file"
+    },
+    {
+        "keys": ["ctrl+alt+l"], "command": "run_everything"
+    },
+    {
+        "keys": ["ctrl+alt+j"], "command": "run_cursor_position"
+    }
+]
