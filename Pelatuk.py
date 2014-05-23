@@ -3,17 +3,19 @@ import sublime, sublime_plugin, os, re
 last_command = ""
 
 def applescript_path():
-  return sublime.packages_path() + "/plugin_one/" + sublime.load_settings('plugin_one.sublime-settings').get('target') + ".scpt"
+  return sublime.packages_path() + "/Pelatuk/" + sublime.load_settings('Pelatuk.sublime-settings').get('target') + ".scpt"
 
 def run_applescript(view, command):
   view.window().run_command("exec", {
     "cmd": [
       "osascript",
       applescript_path(),
-      "plugin_one",
+      "Pelatuk",
       command
     ]
   })
+
+  view.window().run_command("hide_panel", { "panel": "output.exec" })
 
 class BaseTestCommand:
   def file_name(self):
