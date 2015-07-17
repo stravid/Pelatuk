@@ -27,7 +27,7 @@ class BaseTestCommand:
 class RunCursorPositionCommand(sublime_plugin.TextCommand, BaseTestCommand):
   def run(self, edit):
     global last_command
-    pattern = re.compile("test '(.*)' do")
+    pattern = re.compile("test '(.*)'.* do")
     region = self.view.sel()[0]
     line = self.view.full_line(region)
     line_content = self.view.substr(line)
